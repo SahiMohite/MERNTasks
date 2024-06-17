@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: yellow;
+        color: purple;
+        font-family: sans-serif;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+      }
+
+      li {
+        float: left;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: #111;
+      }
+
+      .table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      .th,
+      .td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+      }
+
+      .th {
+        background-color: #f0f0f0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Firstname, Lastname, Age</h1>
+
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+
+    <table class="table">
+      <tr>
+        <th class="th">Firstname</th>
+        <th class="th">Lastname</th>
+        <th class="th">Age</th>
+      </tr>
+      <tr>
+        <td class="td">Jill</td>
+        <td class="td">Smith</td>
+        <td class="td">50</td>
+      </tr>
+      <tr>
+        <td class="td">Eve</td>
+        <td class="td">John</td>
+        <td class="td">80</td>
+      </tr>
+      <tr>
+        <td class="td">Doe</td>
+        <td class="td">Jackson</td>
+        <td class="td">94</td>
+      </tr>
+    </table>
+  </body>
+</html>

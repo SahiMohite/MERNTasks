@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hoverable Sidenav Buttons</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 80px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #f0f0f0;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 20px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #000000;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    .sidenav .closebtn:hover {
+      color: #000000;
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidenav">
+    <a href="#" style="background-color: #4CAF50;">Green</a>
+    <a href="#" style="background-color: #2196F3;">Blue</a>
+    <a href="#" style="background-color: #f44336;">Red</a>
+    <a href="#" style="background-color: #9E9E9E;">Grey</a>
+  </div>
+
+  <div style="margin-left: 80px; padding: 1rem;">
+    <h2>Hoverable Sidenav Buttons</h2>
+    <p>Hover over the buttons in the left side navigation to open them.</p>
+  </div>
+
+</body>
+</html>

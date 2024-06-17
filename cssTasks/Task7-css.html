@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #b93761;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .container {
+        width: 300px;
+        background-color: #912a52;
+        padding: 20px;
+        margin: 20px auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+      }
+
+      input[type="text"]:focus,
+      input[type="password"]:focus,
+      input[type="email"]:focus,
+      textarea:focus {
+        outline: none;
+        background-color: #f1f1f1;
+      }
+
+      input[type="submit"] {
+        background-color: #008cba;
+        color: white;
+        padding: 12px 20px;
+        margin: 10px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+        border-radius: 10px;
+      }
+
+      input[type="submit"]:hover {
+        opacity: 1;
+      }
+
+      .label {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <div class="label">
+          Name:
+          <input type="text" name="name" placeholder="your name" required />
+        </div>
+        <div class="label">
+          Email:
+          <input type="email" name="email" placeholder="your email" required />
+        </div>
+        <div class="label">
+          Password:
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <div class="label">
+          Phone Number:
+          <input type="text" name="phone" placeholder="Phone Number" />
+        </div>
+        <div class="label">
+          Gender: <input type="radio" name="gender" value="male" /> Male
+          <input type="radio" name="gender" value="female" /> Female
+          <input type="radio" name="gender" value="other" /> Other
+        </div>
+        <div class="label">
+          Language:
+          <select name="language">
+            <option value="english">English</option>
+            <option value="spanish">Spanish</option>
+            <option value="french">French</option>
+            <option value="german">German</option>
+          </select>
+        </div>
+        <div class="label">
+          Zip Code: <input type="text" name="zip" placeholder="Zip Code" />
+        </div>
+        <div class="label">
+          About:
+          <textarea
+            name="about"
+            placeholder="Write about yourself..."
+            rows="5"
+          ></textarea>
+        </div>
+        <input type="submit" value="Register" />
+      </form>
+    </div>
+  </body>
+</html>
