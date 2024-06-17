@@ -28,12 +28,27 @@
         border-radius: 5px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         overflow: hidden;
+        position: relative;
       }
 
       .card img {
         width: 100%;
         height: 200px;
         object-fit: cover;
+        transition: opacity 0.3s ease-in-out;
+      }
+
+      .card img.hover-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        opacity: 0;
+      }
+
+      .card img.hover-img:hover {
+        opacity: 1;
       }
 
       .card-content {
@@ -68,10 +83,8 @@
     <div class="container">
       <div class="card-container">
         <div class="card">
-          <img
-            src="/images/4.jpg"
-            alt="Landscape Image"
-          />
+          <img src="/images/4.jpg" alt="Landscape Image" />
+          <img src="/images/3.jpg" alt="Hovered Image" class="hover-img" />
           <div class="card-content">
             <h3 class="card-title">MATERIAL CARDS</h3>
             <p class="card-text">
@@ -84,10 +97,8 @@
           </div>
         </div>
         <div class="card">
-          <img
-            src="/images/4.jpg"
-            alt="Landscape Image"
-          />
+          <img src="/images/4.jpg" alt="Landscape Image" />
+          <img src="/images/3.jpg" alt="Hovered Image" class="hover-img" />
           <div class="card-content">
             <h3 class="card-title">MATERIAL CARDS</h3>
             <p class="card-text">
@@ -100,10 +111,8 @@
           </div>
         </div>
         <div class="card">
-          <img
-            src="/images/4.jpg"
-            alt="Landscape Image"
-          />
+          <img src="/images/4.jpg" alt="Landscape Image" />
+          <img src="/images/3.jpg" alt="Hovered Image" class="hover-img" />
           <div class="card-content">
             <h3 class="card-title">MATERIAL CARDS</h3>
             <p class="card-text">
@@ -116,10 +125,8 @@
           </div>
         </div>
         <div class="card">
-          <img
-            src="/images/4.jpg"
-            alt="Landscape Image"
-          />
+          <img src="/images/4.jpg" alt="Landscape Image" />
+          <img src="/images/3.jpg" alt="Hovered Image" class="hover-img" />
           <div class="card-content">
             <h3 class="card-title">MATERIAL CARDS</h3>
             <p class="card-text">
