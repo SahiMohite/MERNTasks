@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alphabetical Order</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+
+      #input-field {
+        padding: 10px;
+        font-size: 18px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 50%;
+      }
+
+      #submit-btn {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      #submit-btn:hover {
+        background-color: #3e8e41;
+      }
+
+      #result {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Alphabetical Order</h1>
+    <input type="text" id="input-field" placeholder="Enter a string" />
+    <button id="submit-btn">Submit</button>
+    <p id="result"></p>
+
+    
+    <script>
+      function alphabeticalOrder(str) {
+        return str.split("").sort().join("");
+      }
+
+      document
+        .getElementById("submit-btn")
+        .addEventListener("click", function () {
+          let inputField = document.getElementById("input-field");
+          let str = inputField.value.trim();
+          if (str !== "") {
+            let result = alphabeticalOrder(str);
+            document.getElementById(
+              "result"
+            ).innerHTML = `Alphabetical order: ${result}`;
+          } else {
+            document.getElementById("result").innerHTML =
+              "Please enter a string";
+          }
+        });
+    </script>
+  </body>
+</html>

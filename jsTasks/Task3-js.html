@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Calculator</title>
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      .container {
+        width: 30%;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+      }
+
+      input[type="text"] {
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+      }
+
+      button {
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      #result {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Calculator</h1>
+      <label for="num1">1st Number:</label>
+      <input type="text" id="num1" name="num1" />
+
+      <label for="num2">2nd Number:</label>
+      <input type="text" id="num2" name="num2" />
+
+      <button onclick="multiply()">Multiply</button>
+      <button onclick="divide()">Divide</button>
+
+      <p id="result"></p>
+    </div>
+
+    <script>
+      function multiply() {
+        var num1 = parseFloat(document.getElementById("num1").value);
+        var num2 = parseFloat(document.getElementById("num2").value);
+        var result = num1 * num2;
+        document.getElementById("result").innerHTML =
+          "The Result Is: " + result;
+      }
+
+      function divide() {
+        var num1 = parseFloat(document.getElementById("num1").value);
+        var num2 = parseFloat(document.getElementById("num2").value);
+        if (num2 === 0) {
+          document.getElementById("result").innerHTML =
+            "Error: Cannot divide by zero";
+        } else {
+          var result = num1 / num2;
+          document.getElementById("result").innerHTML =
+            "The Result Is: " + result;
+        }
+      }
+    </script>
+  </body>
+</html>

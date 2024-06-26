@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        background-color: #f0f0f0; /* light gray background */
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+
+      #train {
+        width: 200px;
+        height: 100px;
+        position: relative;
+        left: 0px;
+        top: 0px;
+        margin-bottom: 2rem;
+      }
+
+      @keyframes trainAnimation {
+        0% {
+          left: 0px;
+        }
+        100% {
+          left: 500px;
+        }
+      }
+
+      /* styling for buttons */
+      button {
+        background-color: #4CAF50; /* green background */
+        color: #ffffff; /* white text */
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #3e8e41; /* darker green on hover */
+      }
+
+      button:active {
+        background-color: #3e8e41; /* darker green on click */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Animated Train</h1>
+
+    <img
+      id="train"
+      src="/images/train.jpg"
+      style="animation: trainAnimation 2s linear infinite;"
+    />
+
+    <button id="start-btn" onclick="startTrain()">Start</button>
+    <button id="stop-btn" onclick="stopTrain()">Stop</button>
+
+    <script>
+      var train = document.getElementById("train");
+      var isAnimationRunning = true;
+
+      function startTrain() {
+        if (!isAnimationRunning) {
+          train.style.animationPlayState = "running";
+          isAnimationRunning = true;
+          document.getElementById("start-btn").disabled = true;
+          document.getElementById("stop-btn").disabled = false;
+        }
+      }
+
+      function stopTrain() {
+        if (isAnimationRunning) {
+          train.style.animationPlayState = "paused";
+          isAnimationRunning = false;
+          document.getElementById("start-btn").disabled = false;
+          document.getElementById("stop-btn").disabled = true;
+        }
+      }
+    </script>
+  </body>
+</html>
