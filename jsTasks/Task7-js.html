@@ -3,68 +3,70 @@
   <head>
     <style>
       body {
-        background-color: #f0f0f0; /* light gray background */
+        background-color: #f0f0f0; /* Light gray background */
         text-align: center;
         font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
 
       #train {
-        width: 200px;
-        height: 100px;
+        width: 700px;
+        height: 300px;
         position: relative;
-        left: 0px;
-        top: 0px;
         margin-bottom: 2rem;
       }
 
-      @keyframes trainAnimation {
-        0% {
-          left: 0px;
-        }
-        100% {
-          left: 500px;
-        }
-      }
-
-      /* styling for buttons */
+      /* Styling for buttons */
       button {
-        background-color: #4CAF50; /* green background */
-        color: #ffffff; /* white text */
+        background-color: #4caf50; /* Green background */
+        color: #ffffff; /* White text */
         padding: 10px 20px;
         border: none;
         border-radius: 5px;
         cursor: pointer;
+        margin: 0 10px;
       }
 
       button:hover {
-        background-color: #3e8e41; /* darker green on hover */
+        background-color: #3e8e41; /* Darker green on hover */
       }
 
       button:active {
-        background-color: #3e8e41; /* darker green on click */
+        background-color: #3e8e41; /* Darker green on click */
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      button:disabled {
+        background-color: #cccccc; /* Grey background when disabled */
+        cursor: not-allowed;
       }
     </style>
   </head>
   <body>
     <h1>Animated Train</h1>
 
-    <img
-      id="train"
-      src="/images/train.jpg"
-      style="animation: trainAnimation 2s linear infinite;"
-    />
+    <img id="train" src="/images/train.jpg" />
 
-    <button id="start-btn" onclick="startTrain()">Start</button>
-    <button id="stop-btn" onclick="stopTrain()">Stop</button>
+    <div>
+      <button id="start-btn" onclick="startTrain()">Start</button>
+      <button id="stop-btn" onclick="stopTrain()" disabled>Stop</button>
+    </div>
 
     <script>
       var train = document.getElementById("train");
-      var isAnimationRunning = true;
+      var isAnimationRunning = false;
+      var position = 0;
+      var animation;
 
       function startTrain() {
         if (!isAnimationRunning) {
-          train.style.animationPlayState = "running";
+          animation = setInterval(moveTrain, 20);
           isAnimationRunning = true;
           document.getElementById("start-btn").disabled = true;
           document.getElementById("stop-btn").disabled = false;
@@ -73,11 +75,19 @@
 
       function stopTrain() {
         if (isAnimationRunning) {
-          train.style.animationPlayState = "paused";
+          clearInterval(animation);
           isAnimationRunning = false;
           document.getElementById("start-btn").disabled = false;
           document.getElementById("stop-btn").disabled = true;
         }
+      }
+
+      function moveTrain() {
+        position += 1; // Move train by 1px every 20ms
+        if (position > 500) {
+          position = 0; // Reset position to start if it goes beyond 500px
+        }
+        train.style.left = position + "px";
       }
     </script>
   </body>
